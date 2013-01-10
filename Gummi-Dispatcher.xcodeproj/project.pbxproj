@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23950E20735E496FB1B95F62 /* libPods-Gummi-DispatcherTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DFE93A83FF804D64BA20B310 /* libPods-Gummi-DispatcherTests.a */; };
+		8D4DF03C821D77DE50C4C751 /* GDObserverEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4DF6838B85A402CF166D49 /* GDObserverEntry.m */; };
+		8D4DF12636A1FEA6E7D5E258 /* SomeObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4DFC2093688FCE75879BB9 /* SomeObserver.m */; };
+		8D4DF28C963AFA87369647E9 /* GDDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4DF06AB4A00E179BEBF3E4 /* GDDispatcher.m */; };
+		8D4DF76C7E849C79DC6BA84B /* FlagObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4DFE54F05A6B60C90448EA /* FlagObject.m */; };
+		8D4DF825DEDCB48529B11035 /* SomeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4DF5962778705BE97AC1D9 /* SomeObject.m */; };
+		8D4DFDCEA83A4E664FBEFA15 /* GEEventBusSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4DFC4E8B8879B5B177BE24 /* GEEventBusSpec.m */; };
 		CB2270C3169F172C00E7369E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2270C2169F172C00E7369E /* UIKit.framework */; };
 		CB2270C5169F172C00E7369E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2270C4169F172C00E7369E /* Foundation.framework */; };
 		CB2270C7169F172C00E7369E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2270C6169F172C00E7369E /* CoreGraphics.framework */; };
@@ -20,7 +27,6 @@
 		CB2270E2169F172C00E7369E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2270C2169F172C00E7369E /* UIKit.framework */; };
 		CB2270E3169F172C00E7369E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2270C4169F172C00E7369E /* Foundation.framework */; };
 		CB2270EB169F172C00E7369E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB2270E9169F172C00E7369E /* InfoPlist.strings */; };
-		CB2270EE169F172C00E7369E /* Gummi_DispatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2270ED169F172C00E7369E /* Gummi_DispatcherTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +40,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8D4DF06AB4A00E179BEBF3E4 /* GDDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDDispatcher.m; sourceTree = "<group>"; };
+		8D4DF5962778705BE97AC1D9 /* SomeObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SomeObject.m; sourceTree = "<group>"; };
+		8D4DF6838B85A402CF166D49 /* GDObserverEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDObserverEntry.m; sourceTree = "<group>"; };
+		8D4DFA4EEACD1D297A18785F /* SomeObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SomeObserver.h; sourceTree = "<group>"; };
+		8D4DFBBB260B21C14571875F /* SomeObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SomeObject.h; sourceTree = "<group>"; };
+		8D4DFC2093688FCE75879BB9 /* SomeObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SomeObserver.m; sourceTree = "<group>"; };
+		8D4DFC4E8B8879B5B177BE24 /* GEEventBusSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GEEventBusSpec.m; sourceTree = "<group>"; };
+		8D4DFC629981A8039E357513 /* FlagObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlagObject.h; sourceTree = "<group>"; };
+		8D4DFE54F05A6B60C90448EA /* FlagObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlagObject.m; sourceTree = "<group>"; };
+		8D4DFEF7FE70E7BBE27533C5 /* GDObserverEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDObserverEntry.h; sourceTree = "<group>"; };
+		8D4DFF8DCDAEBE0DC0339722 /* GDDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDDispatcher.h; sourceTree = "<group>"; };
+		9127068D4E8D43F3A2B6B0BD /* Pods-Gummi-DispatcherTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gummi-DispatcherTests.xcconfig"; path = "Pods/Pods-Gummi-DispatcherTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 		CB2270BE169F172C00E7369E /* Gummi-Dispatcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gummi-Dispatcher.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB2270C2169F172C00E7369E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CB2270C4169F172C00E7369E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -51,8 +69,7 @@
 		CB2270E0169F172C00E7369E /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		CB2270E8169F172C00E7369E /* Gummi-DispatcherTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Gummi-DispatcherTests-Info.plist"; sourceTree = "<group>"; };
 		CB2270EA169F172C00E7369E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		CB2270EC169F172C00E7369E /* Gummi_DispatcherTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Gummi_DispatcherTests.h; sourceTree = "<group>"; };
-		CB2270ED169F172C00E7369E /* Gummi_DispatcherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Gummi_DispatcherTests.m; sourceTree = "<group>"; };
+		DFE93A83FF804D64BA20B310 /* libPods-Gummi-DispatcherTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Gummi-DispatcherTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,19 +90,56 @@
 				CB2270E1169F172C00E7369E /* SenTestingKit.framework in Frameworks */,
 				CB2270E2169F172C00E7369E /* UIKit.framework in Frameworks */,
 				CB2270E3169F172C00E7369E /* Foundation.framework in Frameworks */,
+				23950E20735E496FB1B95F62 /* libPods-Gummi-DispatcherTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D4DF191A20ACCB2392AC5AF /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8D4DFA4EEACD1D297A18785F /* SomeObserver.h */,
+				8D4DFC2093688FCE75879BB9 /* SomeObserver.m */,
+				8D4DFE54F05A6B60C90448EA /* FlagObject.m */,
+				8D4DFC629981A8039E357513 /* FlagObject.h */,
+				8D4DFBBB260B21C14571875F /* SomeObject.h */,
+				8D4DF5962778705BE97AC1D9 /* SomeObject.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		8D4DF6F37FB204CEF398DADB /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8D4DFF8DCDAEBE0DC0339722 /* GDDispatcher.h */,
+				8D4DF06AB4A00E179BEBF3E4 /* GDDispatcher.m */,
+				8D4DFEF7FE70E7BBE27533C5 /* GDObserverEntry.h */,
+				8D4DF6838B85A402CF166D49 /* GDObserverEntry.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		8D4DF717F5FEE411F8CC743A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CB2270D8169F172C00E7369E /* Default-568h@2x.png */,
+				CB2270D4169F172C00E7369E /* Default.png */,
+				CB2270D6169F172C00E7369E /* Default@2x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		CB2270B3169F172C00E7369E = {
 			isa = PBXGroup;
 			children = (
+				CB2270C1169F172C00E7369E /* Frameworks */,
 				CB2270C8169F172C00E7369E /* Gummi-Dispatcher */,
 				CB2270E6169F172C00E7369E /* Gummi-DispatcherTests */,
-				CB2270C1169F172C00E7369E /* Frameworks */,
+				9127068D4E8D43F3A2B6B0BD /* Pods-Gummi-DispatcherTests.xcconfig */,
 				CB2270BF169F172C00E7369E /* Products */,
+				8D4DF717F5FEE411F8CC743A /* Resources */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +159,7 @@
 				CB2270C4169F172C00E7369E /* Foundation.framework */,
 				CB2270C6169F172C00E7369E /* CoreGraphics.framework */,
 				CB2270E0169F172C00E7369E /* SenTestingKit.framework */,
+				DFE93A83FF804D64BA20B310 /* libPods-Gummi-DispatcherTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -115,6 +170,7 @@
 				CB2270D1169F172C00E7369E /* GDAppDelegate.h */,
 				CB2270D2169F172C00E7369E /* GDAppDelegate.m */,
 				CB2270C9169F172C00E7369E /* Supporting Files */,
+				8D4DF6F37FB204CEF398DADB /* Classes */,
 			);
 			path = "Gummi-Dispatcher";
 			sourceTree = "<group>";
@@ -126,9 +182,6 @@
 				CB2270CB169F172C00E7369E /* InfoPlist.strings */,
 				CB2270CE169F172C00E7369E /* main.m */,
 				CB2270D0169F172C00E7369E /* Gummi-Dispatcher-Prefix.pch */,
-				CB2270D4169F172C00E7369E /* Default.png */,
-				CB2270D6169F172C00E7369E /* Default@2x.png */,
-				CB2270D8169F172C00E7369E /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -136,9 +189,9 @@
 		CB2270E6169F172C00E7369E /* Gummi-DispatcherTests */ = {
 			isa = PBXGroup;
 			children = (
-				CB2270EC169F172C00E7369E /* Gummi_DispatcherTests.h */,
-				CB2270ED169F172C00E7369E /* Gummi_DispatcherTests.m */,
 				CB2270E7169F172C00E7369E /* Supporting Files */,
+				8D4DF191A20ACCB2392AC5AF /* Classes */,
+				8D4DFC4E8B8879B5B177BE24 /* GEEventBusSpec.m */,
 			);
 			path = "Gummi-DispatcherTests";
 			sourceTree = "<group>";
@@ -180,6 +233,7 @@
 				CB2270DB169F172C00E7369E /* Frameworks */,
 				CB2270DC169F172C00E7369E /* Resources */,
 				CB2270DD169F172C00E7369E /* ShellScript */,
+				D554BF0DD6C44954A5A5874B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -255,6 +309,20 @@
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
+		D554BF0DD6C44954A5A5874B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-Gummi-DispatcherTests-resources.sh\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -264,6 +332,8 @@
 			files = (
 				CB2270CF169F172C00E7369E /* main.m in Sources */,
 				CB2270D3169F172C00E7369E /* GDAppDelegate.m in Sources */,
+				8D4DF28C963AFA87369647E9 /* GDDispatcher.m in Sources */,
+				8D4DF03C821D77DE50C4C751 /* GDObserverEntry.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,7 +341,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB2270EE169F172C00E7369E /* Gummi_DispatcherTests.m in Sources */,
+				8D4DF12636A1FEA6E7D5E258 /* SomeObserver.m in Sources */,
+				8D4DF76C7E849C79DC6BA84B /* FlagObject.m in Sources */,
+				8D4DF825DEDCB48529B11035 /* SomeObject.m in Sources */,
+				8D4DFDCEA83A4E664FBEFA15 /* GEEventBusSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,11 +454,13 @@
 		};
 		CB2270F5169F172C00E7369E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9127068D4E8D43F3A2B6B0BD /* Pods-Gummi-DispatcherTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Gummi-Dispatcher.app/Gummi-Dispatcher";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(inherited)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Gummi-Dispatcher/Gummi-Dispatcher-Prefix.pch";
@@ -398,11 +473,13 @@
 		};
 		CB2270F6169F172C00E7369E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9127068D4E8D43F3A2B6B0BD /* Pods-Gummi-DispatcherTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Gummi-Dispatcher.app/Gummi-Dispatcher";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(inherited)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Gummi-Dispatcher/Gummi-Dispatcher-Prefix.pch";
@@ -432,6 +509,7 @@
 				CB2270F3169F172C00E7369E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CB2270F4169F172C00E7369E /* Build configuration list for PBXNativeTarget "Gummi-DispatcherTests" */ = {
 			isa = XCConfigurationList;
@@ -440,6 +518,7 @@
 				CB2270F6169F172C00E7369E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
