@@ -13,6 +13,7 @@
 		8D4DF28C963AFA87369647E9 /* GDDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4DF06AB4A00E179BEBF3E4 /* GDDispatcher.m */; };
 		8D4DF76C7E849C79DC6BA84B /* FlagObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4DFE54F05A6B60C90448EA /* FlagObject.m */; };
 		8D4DF825DEDCB48529B11035 /* SomeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4DF5962778705BE97AC1D9 /* SomeObject.m */; };
+		8D4DFCCDA78F81D170BBDEC1 /* Example.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4DF48C9BE668887253C66E /* Example.m */; };
 		8D4DFDCEA83A4E664FBEFA15 /* GEEventBusSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4DFC4E8B8879B5B177BE24 /* GEEventBusSpec.m */; };
 		CB2270C3169F172C00E7369E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2270C2169F172C00E7369E /* UIKit.framework */; };
 		CB2270C5169F172C00E7369E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2270C4169F172C00E7369E /* Foundation.framework */; };
@@ -41,6 +42,8 @@
 
 /* Begin PBXFileReference section */
 		8D4DF06AB4A00E179BEBF3E4 /* GDDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDDispatcher.m; sourceTree = "<group>"; };
+		8D4DF30CC0DDB5687C55B7A8 /* Example.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example.h; sourceTree = "<group>"; };
+		8D4DF48C9BE668887253C66E /* Example.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Example.m; sourceTree = "<group>"; };
 		8D4DF5962778705BE97AC1D9 /* SomeObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SomeObject.m; sourceTree = "<group>"; };
 		8D4DF6838B85A402CF166D49 /* GDObserverEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDObserverEntry.m; sourceTree = "<group>"; };
 		8D4DFA4EEACD1D297A18785F /* SomeObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SomeObserver.h; sourceTree = "<group>"; };
@@ -131,9 +134,19 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		8D4DFCE1A39A9E80641BAB60 /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				8D4DF48C9BE668887253C66E /* Example.m */,
+				8D4DF30CC0DDB5687C55B7A8 /* Example.h */,
+			);
+			path = Examples;
+			sourceTree = "<group>";
+		};
 		CB2270B3169F172C00E7369E = {
 			isa = PBXGroup;
 			children = (
+				8D4DFCE1A39A9E80641BAB60 /* Examples */,
 				CB2270C1169F172C00E7369E /* Frameworks */,
 				CB2270C8169F172C00E7369E /* Gummi-Dispatcher */,
 				CB2270E6169F172C00E7369E /* Gummi-DispatcherTests */,
@@ -334,6 +347,7 @@
 				CB2270D3169F172C00E7369E /* GDAppDelegate.m in Sources */,
 				8D4DF28C963AFA87369647E9 /* GDDispatcher.m in Sources */,
 				8D4DF03C821D77DE50C4C751 /* GDObserverEntry.m in Sources */,
+				8D4DFCCDA78F81D170BBDEC1 /* Example.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

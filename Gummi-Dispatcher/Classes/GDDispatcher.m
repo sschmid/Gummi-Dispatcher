@@ -46,7 +46,8 @@ GDDispatcher *sDispatcher;
 - (BOOL)canAddObserver:(id)observer forObject:(Class)objectClass withSelector:(SEL)selector {
     if (![observer respondsToSelector:selector])
         @throw [NSException exceptionWithName:[NSString stringWithFormat:@"%@Exception", NSStringFromClass([self class])]
-                                       reason:[NSString stringWithFormat:@"Observer '%@' does not respond to selector '%@'", NSStringFromClass([observer class]), NSStringFromSelector(selector)]
+                                       reason:[NSString stringWithFormat:@"Observer '%@' does not respond to selector '%@'",
+                                                       NSStringFromClass([observer class]), NSStringFromSelector(selector)]
                                      userInfo:nil];
 
     return ![self hasObserver:observer forObject:objectClass withSelector:selector];
@@ -85,13 +86,18 @@ GDDispatcher *sDispatcher;
 }
 
 - (BOOL)hasObserver:(id)observer forObject:(Class)objectClass {
-    return [self hasObserver:observer forObjectKey:NSStringFromClass(objectClass)];
+    for (GDObserverEntry *entry in [self getObserverEntriesForObject:objectClass])
+        if ([entry.observer isEqual:observer])
+            return true;
+
+    return NO;
 }
 
 - (BOOL)hasObserver:(id)observer {
-    for (NSString *key in self.observerEntries)
-        if ([self hasObserver:observer forObjectKey:key])
-            return YES;
+    for (NSArray *observerEntriesForObject in [self.observerEntries allValues])
+        for (GDObserverEntry *entry in observerEntriesForObject)
+            if ([entry.observer isEqual:observer])
+                return YES;
 
     return NO;
 }
@@ -113,10 +119,7 @@ GDDispatcher *sDispatcher;
 }
 
 - (NSMutableArray *)getObserverEntriesForObject:(Class)objectClass {
-    return [self getObserverEntriesForObjectKey:NSStringFromClass(objectClass)];
-}
-
-- (NSMutableArray *)getObserverEntriesForObjectKey:(NSString *)key {
+    NSString *key = NSStringFromClass(objectClass);
     NSMutableArray *observerEntriesForName = self.observerEntries[key];
     if (!observerEntriesForName) {
         observerEntriesForName = [[NSMutableArray alloc] init];
@@ -124,14 +127,6 @@ GDDispatcher *sDispatcher;
     }
 
     return observerEntriesForName;
-}
-
-- (BOOL)hasObserver:(id)observer forObjectKey:(NSString *)key {
-    for (GDObserverEntry *entry in [self getObserverEntriesForObjectKey:key])
-        if ([entry.observer isEqual:observer])
-            return true;
-
-    return NO;
 }
 
 @end
