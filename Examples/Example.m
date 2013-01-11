@@ -7,6 +7,7 @@
 
 #import "Example.h"
 #import "GDDispatcher.h"
+#import "Greeting.h"
 
 
 @implementation Example
@@ -16,22 +17,22 @@
     if (self) {
 
         GDDispatcher *dispatcher = [GDDispatcher sharedDispatcher];
-        [dispatcher addObserver:self forObject:[NSObject class] withSelector:@selector(doSthLast:) priority:-5];
-        [dispatcher addObserver:self forObject:[NSObject class] withSelector:@selector(doSthFirst:) priority:10];
+        [dispatcher addObserver:self forObject:[Greeting class] withSelector:@selector(doSthLast:) priority:-5];
+        [dispatcher addObserver:self forObject:[Greeting class] withSelector:@selector(doSthFirst:) priority:10];
 
-        [dispatcher dispatchObject:[[NSObject alloc] init]];
+        [dispatcher dispatchObject:[[Greeting alloc] initWithString:@"Hello"]];
 
     }
 
     return self;
 }
 
-- (void)doSthFirst:(NSObject *)object {
-    NSLog(@"Hello");
+- (void)doSthFirst:(Greeting *)greeting {
+    NSLog(@"Got greeting first: %@", greeting.string);
 }
 
-- (void)doSthLast:(NSObject *)object {
-    NSLog(@"World!");
+- (void)doSthLast:(Greeting *)greeting {
+    NSLog(@"Got greeting last: %@", greeting.string);
 }
 
 @end

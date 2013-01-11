@@ -15,6 +15,7 @@
 		8D4DF825DEDCB48529B11035 /* SomeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4DF5962778705BE97AC1D9 /* SomeObject.m */; };
 		8D4DFCCDA78F81D170BBDEC1 /* Example.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4DF48C9BE668887253C66E /* Example.m */; };
 		8D4DFDCEA83A4E664FBEFA15 /* GEEventBusSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4DFC4E8B8879B5B177BE24 /* GEEventBusSpec.m */; };
+		8D4DFF3BBC81212A9BCF2251 /* Greeting.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4DFB585334C00FEC8424C5 /* Greeting.m */; };
 		CB2270C3169F172C00E7369E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2270C2169F172C00E7369E /* UIKit.framework */; };
 		CB2270C5169F172C00E7369E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2270C4169F172C00E7369E /* Foundation.framework */; };
 		CB2270C7169F172C00E7369E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2270C6169F172C00E7369E /* CoreGraphics.framework */; };
@@ -51,10 +52,12 @@
 		8D4DF5962778705BE97AC1D9 /* SomeObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SomeObject.m; sourceTree = "<group>"; };
 		8D4DF6838B85A402CF166D49 /* GDObserverEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDObserverEntry.m; sourceTree = "<group>"; };
 		8D4DFA4EEACD1D297A18785F /* SomeObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SomeObserver.h; sourceTree = "<group>"; };
+		8D4DFB585334C00FEC8424C5 /* Greeting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Greeting.m; sourceTree = "<group>"; };
 		8D4DFBBB260B21C14571875F /* SomeObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SomeObject.h; sourceTree = "<group>"; };
 		8D4DFC2093688FCE75879BB9 /* SomeObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SomeObserver.m; sourceTree = "<group>"; };
 		8D4DFC4E8B8879B5B177BE24 /* GEEventBusSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GEEventBusSpec.m; sourceTree = "<group>"; };
 		8D4DFC629981A8039E357513 /* FlagObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlagObject.h; sourceTree = "<group>"; };
+		8D4DFDF9A5AB890165449D58 /* Greeting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Greeting.h; sourceTree = "<group>"; };
 		8D4DFE54F05A6B60C90448EA /* FlagObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlagObject.m; sourceTree = "<group>"; };
 		8D4DFEF7FE70E7BBE27533C5 /* GDObserverEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDObserverEntry.h; sourceTree = "<group>"; };
 		8D4DFF8DCDAEBE0DC0339722 /* GDDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDDispatcher.h; sourceTree = "<group>"; };
@@ -151,6 +154,8 @@
 			children = (
 				8D4DF48C9BE668887253C66E /* Example.m */,
 				8D4DF30CC0DDB5687C55B7A8 /* Example.h */,
+				8D4DFB585334C00FEC8424C5 /* Greeting.m */,
+				8D4DFDF9A5AB890165449D58 /* Greeting.h */,
 			);
 			path = Examples;
 			sourceTree = "<group>";
@@ -364,6 +369,7 @@
 				8D4DF28C963AFA87369647E9 /* GDDispatcher.m in Sources */,
 				8D4DF03C821D77DE50C4C751 /* GDObserverEntry.m in Sources */,
 				8D4DFCCDA78F81D170BBDEC1 /* Example.m in Sources */,
+				8D4DFF3BBC81212A9BCF2251 /* Greeting.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
