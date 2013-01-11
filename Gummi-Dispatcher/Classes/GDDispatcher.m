@@ -37,6 +37,10 @@ GDDispatcher *sDispatcher;
         [entry executeWithObject:object];
 }
 
+- (void)addObserver:(id)observer forObject:(Class)objectClass withSelector:(SEL)selector {
+    [self addObserver:observer forObject:objectClass withSelector:selector priority:0];
+}
+
 - (void)addObserver:(id)observer forObject:(Class)objectClass withSelector:(SEL)selector priority:(int)priority {
     if ([self canAddObserver:observer forObject:objectClass withSelector:selector])
         [self insertObserverEntry:[[GDObserverEntry alloc] initWithObserver:observer forObject:objectClass withSelector:selector priority:priority]
