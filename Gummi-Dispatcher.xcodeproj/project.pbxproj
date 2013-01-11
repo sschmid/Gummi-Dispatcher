@@ -28,6 +28,10 @@
 		CB2270E2169F172C00E7369E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2270C2169F172C00E7369E /* UIKit.framework */; };
 		CB2270E3169F172C00E7369E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2270C4169F172C00E7369E /* Foundation.framework */; };
 		CB2270EB169F172C00E7369E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB2270E9169F172C00E7369E /* InfoPlist.strings */; };
+		CB2271BE16A0197400E7369E /* Gummi-Dispatcher-57.png in Resources */ = {isa = PBXBuildFile; fileRef = CB2271BD16A0197400E7369E /* Gummi-Dispatcher-57.png */; };
+		CB2271C116A0197800E7369E /* Gummi-Dispatcher-114.png in Resources */ = {isa = PBXBuildFile; fileRef = CB2271C016A0197800E7369E /* Gummi-Dispatcher-114.png */; };
+		CB2271C316A0198000E7369E /* Gummi-Dispatcher-144.png in Resources */ = {isa = PBXBuildFile; fileRef = CB2271C216A0198000E7369E /* Gummi-Dispatcher-144.png */; };
+		CB2271C516A0198300E7369E /* Gummi-Dispatcher-72.png in Resources */ = {isa = PBXBuildFile; fileRef = CB2271C416A0198300E7369E /* Gummi-Dispatcher-72.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +76,10 @@
 		CB2270E0169F172C00E7369E /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		CB2270E8169F172C00E7369E /* Gummi-DispatcherTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Gummi-DispatcherTests-Info.plist"; sourceTree = "<group>"; };
 		CB2270EA169F172C00E7369E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CB2271BD16A0197400E7369E /* Gummi-Dispatcher-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Gummi-Dispatcher-57.png"; sourceTree = "<group>"; };
+		CB2271C016A0197800E7369E /* Gummi-Dispatcher-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Gummi-Dispatcher-114.png"; sourceTree = "<group>"; };
+		CB2271C216A0198000E7369E /* Gummi-Dispatcher-144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Gummi-Dispatcher-144.png"; sourceTree = "<group>"; };
+		CB2271C416A0198300E7369E /* Gummi-Dispatcher-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Gummi-Dispatcher-72.png"; sourceTree = "<group>"; };
 		DFE93A83FF804D64BA20B310 /* libPods-Gummi-DispatcherTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Gummi-DispatcherTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -130,6 +138,10 @@
 				CB2270D8169F172C00E7369E /* Default-568h@2x.png */,
 				CB2270D4169F172C00E7369E /* Default.png */,
 				CB2270D6169F172C00E7369E /* Default@2x.png */,
+				CB2271BD16A0197400E7369E /* Gummi-Dispatcher-57.png */,
+				CB2271C416A0198300E7369E /* Gummi-Dispatcher-72.png */,
+				CB2271C016A0197800E7369E /* Gummi-Dispatcher-114.png */,
+				CB2271C216A0198000E7369E /* Gummi-Dispatcher-144.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -295,6 +307,10 @@
 				CB2270D5169F172C00E7369E /* Default.png in Resources */,
 				CB2270D7169F172C00E7369E /* Default@2x.png in Resources */,
 				CB2270D9169F172C00E7369E /* Default-568h@2x.png in Resources */,
+				CB2271BE16A0197400E7369E /* Gummi-Dispatcher-57.png in Resources */,
+				CB2271C116A0197800E7369E /* Gummi-Dispatcher-114.png in Resources */,
+				CB2271C316A0198000E7369E /* Gummi-Dispatcher-144.png in Resources */,
+				CB2271C516A0198300E7369E /* Gummi-Dispatcher-72.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
