@@ -4,13 +4,11 @@
 // contact@sschmid.com
 //
 
-
 #import "Kiwi.h"
 #import "GDDispatcher.h"
 #import "SomeObject.h"
 #import "FlagObject.h"
 #import "SomeObserver.h"
-
 
 SPEC_BEGIN(GEdispatcherSpec)
 

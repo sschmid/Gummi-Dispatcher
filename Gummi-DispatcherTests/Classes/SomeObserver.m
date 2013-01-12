@@ -4,10 +4,8 @@
 // contact@sschmid.com
 //
 
-
 #import "SomeObserver.h"
 #import "SomeObject.h"
-
 
 @implementation SomeObserver
 

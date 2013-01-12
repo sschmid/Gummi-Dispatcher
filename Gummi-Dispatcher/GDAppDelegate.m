@@ -4,10 +4,8 @@
 // contact@sschmid.com
 //
 
-
 #import "GDAppDelegate.h"
 #import "Example.h"
-
 
 @implementation GDAppDelegate
 

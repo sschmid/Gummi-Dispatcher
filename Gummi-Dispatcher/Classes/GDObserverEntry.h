@@ -4,9 +4,7 @@
 // contact@sschmid.com
 //
 
-
 #import <Foundation/Foundation.h>
-
 
 @interface GDObserverEntry : NSObject
 @property(nonatomic, strong) id observer;

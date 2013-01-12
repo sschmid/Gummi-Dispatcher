@@ -4,7 +4,6 @@
 // contact@sschmid.com
 //
 
-
 #import "GDDispatcher.h"
 #import "GDObserverEntry.h"
 
@@ -15,7 +14,6 @@ GDDispatcher *sDispatcher;
 @end
 
 @implementation GDDispatcher
-@synthesize observerEntries = _observerEntries;
 
 + (GDDispatcher *)sharedDispatcher {
     if (!sDispatcher)

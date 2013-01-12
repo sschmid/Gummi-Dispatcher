@@ -4,11 +4,9 @@
 // contact@sschmid.com
 //
 
-
 #import "Example.h"
 #import "GDDispatcher.h"
 #import "Greeting.h"
-
 
 @implementation Example
 

@@ -4,9 +4,7 @@
 // contact@sschmid.com
 //
 
-
 #import <Foundation/Foundation.h>
-
 
 @interface Greeting : NSObject
 @property(nonatomic, copy) NSString *string;

@@ -4,13 +4,9 @@
 // contact@sschmid.com
 //
 
-
 #import "SomeObject.h"
-#import "FlagObject.h"
 
 @implementation SomeObject
-@synthesize object = _object;
-@synthesize string = _string;
 
 - (id)init {
     self = [super init];
