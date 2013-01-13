@@ -72,4 +72,4 @@ $ pod install
 Open the created Xcode Workspace file.
 
 ## Projects that use Gummi Dispatcher
-* [Gummi Commander] (https://github.com/sschmid/Gummi-Commander) Event Command Mapping System for Objective-C
+* [Gummi Commander] (https://github.com/sschmid/Gummi-Commander) Event Command Mapping System for Objective-C.
