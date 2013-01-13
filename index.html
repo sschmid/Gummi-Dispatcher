@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Gummi Dispatcher by sschmid</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Gummi Dispatcher</h1>
+          <h2>Observe and dispatch any objects.</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/sschmid/Gummi-Dispatcher/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/sschmid/Gummi-Dispatcher/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/sschmid/Gummi-Dispatcher" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h2>Gummi Dispatcher</h2>
+
+<p><img src="http://sschmid.com/Libs/Gummi-Dispatcher/Gummi-Dispatcher-128.png" alt="Gummi Dispatcher Logo"></p>
+
+<p>Observe and dispatch any objects.</p>
+
+<h2>Features</h2>
+
+<ul>
+<li>Dispatch any object (no NSNotification like in NSNotificationCenter)</li>
+<li>Add observers with priority</li>
+</ul><h2>How to use Gummi Dispatcher</h2>
+
+<h4>Add an observer an dispatch objects</h4>
+
+<div class="highlight"><pre><span class="c1">// Create your own dispatcher</span>
+<span class="n">GDDispatcher</span> <span class="o">*</span><span class="n">dispatcher</span> <span class="o">=</span> <span class="p">[[</span><span class="n">GDDispatcher</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
+
+<span class="c1">// or use the shared dispatcher</span>
+<span class="n">GDDispatcher</span> <span class="o">*</span><span class="n">dispatcher</span> <span class="o">=</span> <span class="p">[</span><span class="n">GDDispatcher</span> <span class="n">sharedDispatcher</span><span class="p">];</span>
+
+<span class="p">[</span><span class="n">dispatcher</span> <span class="nl">addObserver:</span><span class="n">self</span> <span class="nl">forObject:</span><span class="p">[</span><span class="n">Greeting</span> <span class="n">class</span><span class="p">]</span> <span class="nl">withSelector:</span><span class="k">@selector</span><span class="p">(</span><span class="nl">doSthLast:</span><span class="p">)</span> <span class="nl">priority:</span><span class="o">-</span><span class="mi">5</span><span class="p">];</span>
+<span class="p">[</span><span class="n">dispatcher</span> <span class="nl">addObserver:</span><span class="n">self</span> <span class="nl">forObject:</span><span class="p">[</span><span class="n">Greeting</span> <span class="n">class</span><span class="p">]</span> <span class="nl">withSelector:</span><span class="k">@selector</span><span class="p">(</span><span class="nl">doSthFirst:</span><span class="p">)</span> <span class="nl">priority:</span><span class="mi">10</span><span class="p">];</span>
+
+<span class="p">[</span><span class="n">dispatcher</span> <span class="nl">dispatchObject:</span><span class="p">[[</span><span class="n">Greeting</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithString:</span><span class="s">@"Hello"</span><span class="p">]];</span>
+
+<span class="c1">// Logs</span>
+<span class="c1">// Got greeting first: Hello</span>
+<span class="c1">// Got greeting last: Hello</span>
+</pre></div>
+
+<div class="highlight"><pre><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">doSthFirst:</span><span class="p">(</span><span class="n">Greeting</span> <span class="o">*</span><span class="p">)</span><span class="nv">greeting</span> <span class="p">{</span>
+    <span class="n">NSLog</span><span class="p">(</span><span class="s">@"Got greeting first: %@"</span><span class="p">,</span> <span class="n">greeting</span><span class="p">.</span><span class="n">string</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">doSthLast:</span><span class="p">(</span><span class="n">Greeting</span> <span class="o">*</span><span class="p">)</span><span class="nv">greeting</span> <span class="p">{</span>
+    <span class="n">NSLog</span><span class="p">(</span><span class="s">@"Got greeting last: %@"</span><span class="p">,</span> <span class="n">greeting</span><span class="p">.</span><span class="n">string</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2>Other projects using Gummi Dispatcher</h2>
+
+<ul>
+<li>
+<a href="https://github.com/sschmid/Gummi-Commander">Gummi Commander</a> Event Command Mapping System for Objective-C</li>
+</ul><p>If you enjoy using Gummi Dispatcher in your projects let me know, and I'll mention your projects here.</p>
+        </section>
+
+        <footer>
+          Gummi Dispatcher is maintained by <a href="https://github.com/sschmid">sschmid</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
