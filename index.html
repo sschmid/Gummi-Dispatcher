@@ -31,9 +31,11 @@
         <hr>
 
         <section id="main_content">
-          <h2>Gummi Dispatcher</h2>
+          <h1>Gummi Dispatcher</h1>
 
 <p><img src="http://sschmid.com/Libs/Gummi-Dispatcher/Gummi-Dispatcher-128.png" alt="Gummi Dispatcher Logo"></p>
+
+<h2>Description</h2>
 
 <p>Observe and dispatch any objects.</p>
 
@@ -44,20 +46,27 @@
 <li>Add observers with priority</li>
 </ul><h2>How to use Gummi Dispatcher</h2>
 
-<h4>Add an observer an dispatch objects</h4>
+<h4>Get a dispatcher</h4>
 
 <div class="highlight"><pre><span class="c1">// Create your own dispatcher</span>
 <span class="n">GDDispatcher</span> <span class="o">*</span><span class="n">dispatcher</span> <span class="o">=</span> <span class="p">[[</span><span class="n">GDDispatcher</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
 
 <span class="c1">// or use the shared dispatcher</span>
 <span class="n">GDDispatcher</span> <span class="o">*</span><span class="n">dispatcher</span> <span class="o">=</span> <span class="p">[</span><span class="n">GDDispatcher</span> <span class="n">sharedDispatcher</span><span class="p">];</span>
+</pre></div>
 
-<span class="p">[</span><span class="n">dispatcher</span> <span class="nl">addObserver:</span><span class="n">self</span> <span class="nl">forObject:</span><span class="p">[</span><span class="n">Greeting</span> <span class="n">class</span><span class="p">]</span>
+<h4>Add observers</h4>
+
+<div class="highlight"><pre><span class="p">[</span><span class="n">dispatcher</span> <span class="nl">addObserver:</span><span class="n">self</span> <span class="nl">forObject:</span><span class="p">[</span><span class="n">Greeting</span> <span class="n">class</span><span class="p">]</span>
            <span class="nl">withSelector:</span><span class="k">@selector</span><span class="p">(</span><span class="nl">doSthLast:</span><span class="p">)</span> <span class="nl">priority:</span><span class="o">-</span><span class="mi">5</span><span class="p">];</span>
+
 <span class="p">[</span><span class="n">dispatcher</span> <span class="nl">addObserver:</span><span class="n">self</span> <span class="nl">forObject:</span><span class="p">[</span><span class="n">Greeting</span> <span class="n">class</span><span class="p">]</span>
            <span class="nl">withSelector:</span><span class="k">@selector</span><span class="p">(</span><span class="nl">doSthFirst:</span><span class="p">)</span> <span class="nl">priority:</span><span class="mi">10</span><span class="p">];</span>
+</pre></div>
 
-<span class="p">[</span><span class="n">dispatcher</span> <span class="nl">dispatchObject:</span><span class="p">[[</span><span class="n">Greeting</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithString:</span><span class="s">@"Hello"</span><span class="p">]];</span>
+<h4>Dispatch objects</h4>
+
+<div class="highlight"><pre><span class="p">[</span><span class="n">dispatcher</span> <span class="nl">dispatchObject:</span><span class="p">[[</span><span class="n">Greeting</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithString:</span><span class="s">@"Hello"</span><span class="p">]];</span>
 
 <span class="c1">// Logs</span>
 <span class="c1">// Got greeting first: Hello</span>
@@ -73,12 +82,16 @@
 <span class="p">}</span>
 </pre></div>
 
-<h2>Other projects using Gummi Dispatcher</h2>
+<h2>Ideas / Roadmap</h2>
+
+<ul>
+<li>Add method addObserverOnce:forObject:withSelector:priority:</li>
+</ul><h2>Projects that use Gummi Dispatcher</h2>
 
 <ul>
 <li>
-<a href="http://sschmid.github.com/Gummi-Commander">Gummi Commander</a> Event Command Mapping System for Objective-C</li>
-</ul><p>If you enjoy using Gummi Dispatcher in your projects let me know, and I'll mention your projects here.</p>
+<a href="https://github.com/sschmid/Gummi-Commander">Gummi Commander</a> Event Command Mapping System for Objective-C</li>
+</ul>
         </section>
 
         <footer>
