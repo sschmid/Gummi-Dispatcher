@@ -1,6 +1,7 @@
-## Gummi Dispatcher
+# Gummi Dispatcher
 ![Gummi Dispatcher Logo](http://sschmid.com/Libs/Gummi-Dispatcher/Gummi-Dispatcher-128.png)
 
+## Description
 Observe and dispatch any objects.
 
 ## Features
@@ -8,18 +9,25 @@ Observe and dispatch any objects.
 * Add observers with priority
 
 ## How to use Gummi Dispatcher
-
-#### Add an observer an dispatch objects
+#### Get a dispatcher
 ```objective-c
 // Create your own dispatcher
 GDDispatcher *dispatcher = [[GDDispatcher alloc] init];
 
 // or use the shared dispatcher
 GDDispatcher *dispatcher = [GDDispatcher sharedDispatcher];
+```
 
-[dispatcher addObserver:self forObject:[Greeting class] withSelector:@selector(doSthLast:) priority:-5];
-[dispatcher addObserver:self forObject:[Greeting class] withSelector:@selector(doSthFirst:) priority:10];
+#### Add observers
+```objective-c
+[dispatcher addObserver:self forObject:[Greeting class]
+           withSelector:@selector(doSthLast:) priority:-5];
 
+[dispatcher addObserver:self forObject:[Greeting class]
+           withSelector:@selector(doSthFirst:) priority:10];
+```
+#### Dispatch objects
+```objective-c
 [dispatcher dispatchObject:[[Greeting alloc] initWithString:@"Hello"]];
 
 // Logs
@@ -37,22 +45,18 @@ GDDispatcher *dispatcher = [GDDispatcher sharedDispatcher];
 }
 ```
 
-## Use Gummi Dispatcher in your project
+## Ideas / Roadmap
+* Add method addObserverOnce:forObject:withSelector:priority:
+
+## Install Gummi Dispatcher
 You find the source files you need in Gummi-Dispatcher/Classes.
 
 ## CocoaPods
-Create a Podfile and put it into your root folder of your project
-
-#### Edit your Podfile
+Install [CocoaPods] (http://cocoapods.org) and add the Gummi Dispatcher reference to your Podfile
 ```
 platform :ios, '5.0'
-pod 'Gummi-Dispatcher'
-```
-
-#### Setup [CocoaPods], if not done already
-```
-$ sudo gem install cocoapods
-$ pod setup
+  pod 'Gummi-Dispatcher'
+end
 ```
 
 #### Add this remote
@@ -65,12 +69,7 @@ $ pod repo add sschmid-cocoapods-specs https://github.com/sschmid/cocoapods-spec
 $ cd path/to/project
 $ pod install
 ```
+Open the created Xcode Workspace file.
 
-## Other projects using Gummi Dispatcher
-
+## Projects that use Gummi Dispatcher
 * [Gummi Commander] (https://github.com/sschmid/Gummi-Commander) Event Command Mapping System for Objective-C
-
-If you enjoy using Gummi Dispatcher in your projects let me know, and I'll mention your projects here.
-
-[cocoapods]: http://cocoapods.org/
-[Gummi Injection]: https://github.com/sschmid/Gummi-Injection/
