@@ -7,6 +7,7 @@ Observe and dispatch any objects.
 ## Features
 * Dispatch any object (no NSNotification like in NSNotificationCenter)
 * Add observers with priority
+* Add observers that get removed after execution (add once)
 
 ## How to use Gummi Dispatcher
 
@@ -27,6 +28,16 @@ GDDispatcher *dispatcher = [GDDispatcher sharedDispatcher];
            withSelector:@selector(doSthLast:) priority:-5];
 
 [dispatcher addObserver:self forObject:[Greeting class]
+           withSelector:@selector(doSthFirst:) priority:10];
+```
+
+You can add observers that get removed after execution with `addObserverOnce:forObject:withSelector:priority:`
+
+```objective-c
+[dispatcher addObserverOnce:self forObject:[Greeting class]
+           withSelector:@selector(doSthLast:) priority:-5];
+
+[dispatcher addObserverOnce:self forObject:[Greeting class]
            withSelector:@selector(doSthFirst:) priority:10];
 ```
 
