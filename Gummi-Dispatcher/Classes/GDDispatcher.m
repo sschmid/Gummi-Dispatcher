@@ -71,7 +71,7 @@ GDDispatcher *sDispatcher;
 
 - (void)removeObserver:(id)observer {
     for (NSArray *observerEntriesForObject in [self.observerEntries allValues])
-        for (GDObserverEntry *entry in observerEntriesForObject)
+        for (GDObserverEntry *entry in [observerEntriesForObject copy])
             [self removeObserver:observer fromObject:entry.objectClass];
 }
 

@@ -77,6 +77,12 @@ SPEC_BEGIN(GEdispatcherSpec)
                     object = [[SomeObject alloc] init];
                     sel = @selector(test:);
                     [dispatcher addObserver:observer forObject:[object class] withSelector:sel priority:0];
+
+                    // Add some unused observers
+                    [dispatcher addObserver:[[SomeObserver alloc] init] forObject:[object class] withSelector:sel priority:0];
+                    [dispatcher addObserver:[[SomeObserver alloc] init] forObject:[object class] withSelector:sel priority:0];
+                    [dispatcher addObserver:[[SomeObserver alloc] init] forObject:[object class] withSelector:sel priority:0];
+                    [dispatcher addObserver:[[SomeObserver alloc] init] forObject:[object class] withSelector:sel priority:0];
                 });
 
                 it(@"has observer", ^{
