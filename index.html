@@ -44,6 +44,7 @@
 <ul>
 <li>Dispatch any object (no NSNotification like in NSNotificationCenter)</li>
 <li>Add observers with priority</li>
+<li>Add observers that get removed after execution (add once)</li>
 </ul><h2>How to use Gummi Dispatcher</h2>
 
 <h4>Get a dispatcher</h4>
@@ -61,6 +62,15 @@
            <span class="nl">withSelector:</span><span class="k">@selector</span><span class="p">(</span><span class="nl">doSthLast:</span><span class="p">)</span> <span class="nl">priority:</span><span class="o">-</span><span class="mi">5</span><span class="p">];</span>
 
 <span class="p">[</span><span class="n">dispatcher</span> <span class="nl">addObserver:</span><span class="n">self</span> <span class="nl">forObject:</span><span class="p">[</span><span class="n">Greeting</span> <span class="n">class</span><span class="p">]</span>
+           <span class="nl">withSelector:</span><span class="k">@selector</span><span class="p">(</span><span class="nl">doSthFirst:</span><span class="p">)</span> <span class="nl">priority:</span><span class="mi">10</span><span class="p">];</span>
+</pre></div>
+
+<p>You can add observers that get removed after execution</p>
+
+<div class="highlight"><pre><span class="p">[</span><span class="n">dispatcher</span> <span class="nl">addObserverOnce:</span><span class="n">self</span> <span class="nl">forObject:</span><span class="p">[</span><span class="n">Greeting</span> <span class="n">class</span><span class="p">]</span>
+           <span class="nl">withSelector:</span><span class="k">@selector</span><span class="p">(</span><span class="nl">doSthLast:</span><span class="p">)</span> <span class="nl">priority:</span><span class="o">-</span><span class="mi">5</span><span class="p">];</span>
+
+<span class="p">[</span><span class="n">dispatcher</span> <span class="nl">addObserverOnce:</span><span class="n">self</span> <span class="nl">forObject:</span><span class="p">[</span><span class="n">Greeting</span> <span class="n">class</span><span class="p">]</span>
            <span class="nl">withSelector:</span><span class="k">@selector</span><span class="p">(</span><span class="nl">doSthFirst:</span><span class="p">)</span> <span class="nl">priority:</span><span class="mi">10</span><span class="p">];</span>
 </pre></div>
 
