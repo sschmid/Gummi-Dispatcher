@@ -10,7 +10,7 @@
 #import "FlagObject.h"
 #import "SomeObserver.h"
 
-SPEC_BEGIN(GEdispatcherSpec)
+SPEC_BEGIN(GDDispatcherSpec)
 
 #pragma mark Helper blocks
         void (^hasNoObserver)(GDDispatcher *, id, id, SEL) = ^(GDDispatcher *dispatcher, id observer, id event, SEL sel) {
@@ -103,7 +103,7 @@ SPEC_BEGIN(GEdispatcherSpec)
                 it(@"raises exception, when observer does not respond to selector", ^{
                     [[theBlock(^{
                         [dispatcher addObserver:observer forObject:object withSelector:@selector(unknownSelector) priority:0];
-                    }) should] raiseWithName:@"GDDispatcherException"];
+                    }) should] raiseWithName:@"GDObserverEntryException"];
                 });
 
                 it(@"has no observer for wrong object", ^{
@@ -150,6 +150,34 @@ SPEC_BEGIN(GEdispatcherSpec)
                     hasNoObserver(dispatcher, observer, object, sel);
                 });
 
+            });
+
+            it(@"executes multiple times", ^{
+                SomeObject *object = [[SomeObject alloc] init];
+                SomeObserver *observer = [[SomeObserver alloc] init];
+                [dispatcher addObserver:observer forObject:[object class] withSelector:@selector(add1:)];
+                [dispatcher dispatchObject:object];
+                [dispatcher dispatchObject:object];
+                [dispatcher dispatchObject:object];
+
+                [[observer.result should] equal:@"111"];
+            });
+
+            it(@"executes only once and removes mapping", ^{
+                SomeObject *object = [[SomeObject alloc] init];
+                SomeObserver *observer = [[SomeObserver alloc] init];
+                [dispatcher addObserverOnce:observer forObject:[object class] withSelector:@selector(add1:)];
+
+                // Some unused observers
+                [dispatcher addObserverOnce:[[SomeObserver alloc] init] forObject:[object class] withSelector:@selector(add1:)];
+                [dispatcher addObserverOnce:[[SomeObserver alloc] init] forObject:[object class] withSelector:@selector(add1:)];
+                [dispatcher addObserverOnce:[[SomeObserver alloc] init] forObject:[object class] withSelector:@selector(add1:)];
+
+                [dispatcher dispatchObject:object];
+                [dispatcher dispatchObject:object];
+                [dispatcher dispatchObject:object];
+
+                [[observer.result should] equal:@"1"];
             });
 
             it(@"executes in right order with priority 0", ^{

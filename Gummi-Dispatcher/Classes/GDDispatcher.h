@@ -15,6 +15,9 @@
 - (void)addObserver:(id)observer forObject:(Class)objectClass withSelector:(SEL)selector;
 - (void)addObserver:(id)observer forObject:(Class)objectClass withSelector:(SEL)selector priority:(int)priority;
 
+- (void)addObserverOnce:(id)observer forObject:(Class)objectClass withSelector:(SEL)selector;
+- (void)addObserverOnce:(id)observer forObject:(Class)objectClass withSelector:(SEL)selector priority:(int)priority;
+
 - (void)removeObserver:(id)observer fromObject:(Class)objectClass withSelector:(SEL)selector;
 - (void)removeObserver:(id)observer fromObject:(Class)objectClass;
 - (void)removeObserver:(id)observer;

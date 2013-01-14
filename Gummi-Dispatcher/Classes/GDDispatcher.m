@@ -31,8 +31,11 @@ GDDispatcher *sDispatcher;
 }
 
 - (void)dispatchObject:(id)object {
-    for (GDObserverEntry *entry in [self getObserverEntriesForObject:[object class]])
+    for (GDObserverEntry *entry in [[self getObserverEntriesForObject:[object class]] copy]) {
         [entry executeWithObject:object];
+        if (entry.remove)
+            [self removeObserver:entry.observer fromObject:entry.objectClass withSelector:entry.selector];
+    }
 }
 
 - (void)addObserver:(id)observer forObject:(Class)objectClass withSelector:(SEL)selector {
@@ -40,18 +43,18 @@ GDDispatcher *sDispatcher;
 }
 
 - (void)addObserver:(id)observer forObject:(Class)objectClass withSelector:(SEL)selector priority:(int)priority {
-    if ([self canAddObserver:observer forObject:objectClass withSelector:selector])
-        [self insertObserverEntry:[[GDObserverEntry alloc] initWithObserver:observer forObject:objectClass withSelector:selector priority:priority]
-              intoObserverEntries:[self getObserverEntriesForObject:objectClass] withPriority:priority];
+    [self addObserver:observer forObject:objectClass withSelector:selector priority:priority removeAfterExecution:NO];
+}
+
+- (void)addObserverOnce:(id)observer forObject:(Class)objectClass withSelector:(SEL)selector {
+    [self addObserverOnce:observer forObject:objectClass withSelector:selector priority:0];
+}
+
+- (void)addObserverOnce:(id)observer forObject:(Class)objectClass withSelector:(SEL)selector priority:(int)priority {
+    [self addObserver:observer forObject:objectClass withSelector:selector priority:priority removeAfterExecution:YES];
 }
 
 - (BOOL)canAddObserver:(id)observer forObject:(Class)objectClass withSelector:(SEL)selector {
-    if (![observer respondsToSelector:selector])
-        @throw [NSException exceptionWithName:[NSString stringWithFormat:@"%@Exception", NSStringFromClass([self class])]
-                                       reason:[NSString stringWithFormat:@"Observer '%@' does not respond to selector '%@'",
-                                                       NSStringFromClass([observer class]), NSStringFromSelector(selector)]
-                                     userInfo:nil];
-
     return ![self hasObserver:observer forObject:objectClass withSelector:selector];
 }
 
@@ -106,6 +109,14 @@ GDDispatcher *sDispatcher;
 
 
 #pragma mark private
+
+- (void)addObserver:(id)observer forObject:(Class)objectClass withSelector:(SEL)selector priority:(int)priority removeAfterExecution:(BOOL)remove {
+    if ([self canAddObserver:observer forObject:objectClass withSelector:selector])
+        [self insertObserverEntry:[[GDObserverEntry alloc] initWithObserver:observer forObject:objectClass withSelector:selector
+                                                                   priority:priority removeAfterExecution:remove]
+              intoObserverEntries:[self getObserverEntriesForObject:objectClass] withPriority:priority];
+
+}
 
 - (void)insertObserverEntry:(GDObserverEntry *)observerEntry intoObserverEntries:(NSMutableArray *)observerEntriesForObject withPriority:(int)priority {
     GDObserverEntry *existingEntry;

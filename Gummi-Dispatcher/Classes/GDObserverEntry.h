@@ -11,8 +11,9 @@
 @property(nonatomic, strong) Class objectClass;
 @property(nonatomic) SEL selector;
 @property(nonatomic) int priority;
+@property(nonatomic) BOOL remove;
 
-- (id)initWithObserver:(id)observer forObject:(Class)objectClass withSelector:(SEL)selector priority:(int)priority;
+- (id)initWithObserver:(id)observer forObject:(Class)objectClass withSelector:(SEL)selector priority:(int)priority removeAfterExecution:(BOOL)remove;
 - (void)executeWithObject:(id)object;
 
 @end
