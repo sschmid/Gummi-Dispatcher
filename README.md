@@ -31,7 +31,7 @@ GDDispatcher *dispatcher = [GDDispatcher sharedDispatcher];
            withSelector:@selector(doSthFirst:) priority:10];
 ```
 
-You can add observers that get removed after execution with `addObserverOnce:forObject:withSelector:priority:`
+You can add observers that get removed after execution
 
 ```objective-c
 [dispatcher addObserverOnce:self forObject:[Greeting class]
