@@ -9,7 +9,9 @@ Observe and dispatch any objects.
 * Add observers with priority
 
 ## How to use Gummi Dispatcher
+
 #### Get a dispatcher
+
 ```objective-c
 // Create your own dispatcher
 GDDispatcher *dispatcher = [[GDDispatcher alloc] init];
@@ -19,6 +21,7 @@ GDDispatcher *dispatcher = [GDDispatcher sharedDispatcher];
 ```
 
 #### Add observers
+
 ```objective-c
 [dispatcher addObserver:self forObject:[Greeting class]
            withSelector:@selector(doSthLast:) priority:-5];
@@ -26,7 +29,9 @@ GDDispatcher *dispatcher = [GDDispatcher sharedDispatcher];
 [dispatcher addObserver:self forObject:[Greeting class]
            withSelector:@selector(doSthFirst:) priority:10];
 ```
+
 #### Dispatch objects
+
 ```objective-c
 [dispatcher dispatchObject:[[Greeting alloc] initWithString:@"Hello"]];
 
@@ -45,14 +50,12 @@ GDDispatcher *dispatcher = [GDDispatcher sharedDispatcher];
 }
 ```
 
-## Ideas / Roadmap
-* Add method addObserverOnce:forObject:withSelector:priority:
-
 ## Install Gummi Dispatcher
 You find the source files you need in Gummi-Dispatcher/Classes.
 
 ## CocoaPods
 Install [CocoaPods] (http://cocoapods.org) and add the Gummi Dispatcher reference to your Podfile
+
 ```
 platform :ios, '5.0'
   pod 'Gummi-Dispatcher'
@@ -65,6 +68,7 @@ $ pod repo add sschmid-cocoapods-specs https://github.com/sschmid/cocoapods-spec
 ```
 
 #### Install Gummi Dispatcher
+
 ```
 $ cd path/to/project
 $ pod install
@@ -72,4 +76,4 @@ $ pod install
 Open the created Xcode Workspace file.
 
 ## Projects that use Gummi Dispatcher
-* [Gummi Commander] (https://github.com/sschmid/Gummi-Commander) Event Command Mapping System for Objective-C.
+* [Gummi Commander] (https://github.com/sschmid/Gummi-Commander) Event Command Mapping System for Objective-C
