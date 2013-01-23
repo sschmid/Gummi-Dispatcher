@@ -26,9 +26,9 @@
         self.delegate1 = [[Delegate1 alloc] init];
         self.delegate2 = [[Delegate2 alloc] init];
 
-        [self.interestingObject addDelegate:self];
-        [self.interestingObject addDelegate:self.delegate1];
-        [self.interestingObject addDelegate:self.delegate2];
+        [self.interestingObject addDelegate:self priority:0];
+        [self.interestingObject addDelegate:self.delegate1 priority:5];
+        [self.interestingObject addDelegate:self.delegate2 priority:-2];
 
         [self.interestingObject start];
     }

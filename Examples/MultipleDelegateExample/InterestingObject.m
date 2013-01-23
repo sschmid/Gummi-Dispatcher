@@ -13,14 +13,14 @@
 - (id)init {
     self = [super init];
     if (self) {
-        self.dispatcher = [GDDispatcher sharedDispatcher];
+        self.dispatcher = [[GDDispatcher alloc] init];
     }
 
     return self;
 }
 
-- (void)addDelegate:(id)delegate {
-    [self.dispatcher addObserver:delegate forObject:[Message class] withSelector:@selector(logMessage:)];
+- (void)addDelegate:(id)delegate priority:(int)priority {
+    [self.dispatcher addObserver:delegate forObject:[Message class] withSelector:@selector(logMessage:) priority:priority];
 }
 
 - (void)start {

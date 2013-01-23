@@ -11,7 +11,7 @@
 @interface InterestingObject : NSObject
 @property(nonatomic, strong) GDDispatcher *dispatcher;
 
-- (void)addDelegate:(id)delegate;
+- (void)addDelegate:(id)delegate priority:(int)priority;
 
 - (void)start;
 @end
