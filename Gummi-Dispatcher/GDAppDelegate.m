@@ -6,6 +6,7 @@
 
 #import "GDAppDelegate.h"
 #import "Example.h"
+#import "MultipleDelegateExample.h"
 
 @implementation GDAppDelegate
 
@@ -17,6 +18,8 @@
     [self addIcon];
 
     Example *example = [[Example alloc] init];
+
+    MultipleDelegateExample *delegateExample = [[MultipleDelegateExample alloc] init];
 
     return YES;
 }
