@@ -54,10 +54,6 @@ GDDispatcher *sDispatcher;
     [self addObserver:observer forObject:objectClass withSelector:selector priority:priority removeAfterExecution:YES];
 }
 
-- (BOOL)canAddObserver:(id)observer forObject:(Class)objectClass withSelector:(SEL)selector {
-    return ![self hasObserver:observer forObject:objectClass withSelector:selector];
-}
-
 - (void)removeObserver:(id)observer fromObject:(Class)objectClass withSelector:(SEL)selector {
     NSMutableArray *observerEntriesForObject = [self getObserverEntriesForObject:objectClass];
     for (GDObserverEntry *entry in [observerEntriesForObject copy])
@@ -116,6 +112,10 @@ GDDispatcher *sDispatcher;
                                                                    priority:priority removeAfterExecution:remove]
               intoObserverEntries:[self getObserverEntriesForObject:objectClass] withPriority:priority];
 
+}
+
+- (BOOL)canAddObserver:(id)observer forObject:(Class)objectClass withSelector:(SEL)selector {
+    return ![self hasObserver:observer forObject:objectClass withSelector:selector];
 }
 
 - (void)insertObserverEntry:(GDObserverEntry *)observerEntry intoObserverEntries:(NSMutableArray *)observerEntriesForObject withPriority:(int)priority {
