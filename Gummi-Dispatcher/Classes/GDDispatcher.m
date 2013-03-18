@@ -32,9 +32,10 @@ GDDispatcher *sDispatcher;
 
 - (void)dispatchObject:(id)object {
     for (GDObserverEntry *entry in [[self getObserverEntriesForObject:[object class]] copy]) {
-        [entry executeWithObject:object];
         if (entry.remove)
             [self removeObserver:entry.observer fromObject:entry.objectClass withSelector:entry.selector];
+
+        [entry executeWithObject:object];
     }
 }
 

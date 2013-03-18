@@ -15,6 +15,7 @@
 		8D4DF28C963AFA87369647E9 /* GDDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4DF06AB4A00E179BEBF3E4 /* GDDispatcher.m */; };
 		8D4DF3939C0E34FCDB8F1EB8 /* InterestingObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4DF4CB2CD8043981712624 /* InterestingObject.m */; };
 		8D4DF432699AC6EE2516CC26 /* Delegate2.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4DFF5104147C9AE07076FA /* Delegate2.m */; };
+		8D4DF529D174ED7CC6849160 /* HasObserverObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4DF03BB4F988BAA847A33F /* HasObserverObserver.m */; };
 		8D4DF76C7E849C79DC6BA84B /* FlagObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4DFE54F05A6B60C90448EA /* FlagObject.m */; };
 		8D4DF825DEDCB48529B11035 /* SomeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4DF5962778705BE97AC1D9 /* SomeObject.m */; };
 		8D4DFCCDA78F81D170BBDEC1 /* Example.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4DF48C9BE668887253C66E /* Example.m */; };
@@ -51,12 +52,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8D4DF03BB4F988BAA847A33F /* HasObserverObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HasObserverObserver.m; path = Classes/HasObserverObserver.m; sourceTree = "<group>"; };
 		8D4DF06AB4A00E179BEBF3E4 /* GDDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDDispatcher.m; sourceTree = "<group>"; };
 		8D4DF30CC0DDB5687C55B7A8 /* Example.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example.h; sourceTree = "<group>"; };
 		8D4DF342B66429CE8C27E5DD /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
 		8D4DF4337D51C0338F12AD94 /* Delegate1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Delegate1.h; sourceTree = "<group>"; };
 		8D4DF48C9BE668887253C66E /* Example.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Example.m; sourceTree = "<group>"; };
 		8D4DF4CB2CD8043981712624 /* InterestingObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterestingObject.m; sourceTree = "<group>"; };
+		8D4DF506F0B3C3086809266A /* HasObserverObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HasObserverObserver.h; path = Classes/HasObserverObserver.h; sourceTree = "<group>"; };
 		8D4DF5962778705BE97AC1D9 /* SomeObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SomeObject.m; sourceTree = "<group>"; };
 		8D4DF5AD6AD1243AF98B4DB2 /* Delegate2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Delegate2.h; sourceTree = "<group>"; };
 		8D4DF5F6210D30D00AAAA0A6 /* MultipleDelegateExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipleDelegateExample.m; sourceTree = "<group>"; };
@@ -265,6 +268,8 @@
 				CB2270E7169F172C00E7369E /* Supporting Files */,
 				8D4DF191A20ACCB2392AC5AF /* Classes */,
 				8D4DFC4E8B8879B5B177BE24 /* GDDispatcherSpec.m */,
+				8D4DF03BB4F988BAA847A33F /* HasObserverObserver.m */,
+				8D4DF506F0B3C3086809266A /* HasObserverObserver.h */,
 			);
 			path = "Gummi-DispatcherTests";
 			sourceTree = "<group>";
@@ -429,6 +434,7 @@
 				8D4DF76C7E849C79DC6BA84B /* FlagObject.m in Sources */,
 				8D4DF825DEDCB48529B11035 /* SomeObject.m in Sources */,
 				8D4DFDCEA83A4E664FBEFA15 /* GDDispatcherSpec.m in Sources */,
+				8D4DF529D174ED7CC6849160 /* HasObserverObserver.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

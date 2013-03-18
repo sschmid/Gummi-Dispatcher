@@ -9,6 +9,7 @@
 #import "SomeObject.h"
 #import "FlagObject.h"
 #import "SomeObserver.h"
+#import "HasObserverObserver.h"
 
 SPEC_BEGIN(GDDispatcherSpec)
 
@@ -174,6 +175,16 @@ SPEC_BEGIN(GDDispatcherSpec)
                     BOOL has = [dispatcher hasObserver:observer forObject:[object class] withSelector:@selector(add1:)];
 
                     [[theValue(has) should] beNo];
+                });
+
+                it(@"removes observer when mapped once before performing selector", ^{
+                    SomeObject *object = [[SomeObject alloc] init];
+                    HasObserverObserver *observer = [[HasObserverObserver alloc] init];
+                    observer.dispatcher = dispatcher;
+                    [dispatcher addObserverOnce:observer forObject:[object class] withSelector:@selector(check:)];
+                    [dispatcher dispatchObject:object];
+
+                    [[theValue(observer.result) should] beNo];
                 });
 
                 it(@"executes only once and removes mapping", ^{
