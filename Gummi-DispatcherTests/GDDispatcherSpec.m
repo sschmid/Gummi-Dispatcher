@@ -163,21 +163,36 @@ SPEC_BEGIN(GDDispatcherSpec)
                 [[observer.result should] equal:@"111"];
             });
 
-            it(@"executes only once and removes mapping", ^{
-                SomeObject *object = [[SomeObject alloc] init];
-                SomeObserver *observer = [[SomeObserver alloc] init];
-                [dispatcher addObserverOnce:observer forObject:[object class] withSelector:@selector(add1:)];
+            context(@"when added an observer once", ^{
 
-                // Some unused observers
-                [dispatcher addObserverOnce:[[SomeObserver alloc] init] forObject:[object class] withSelector:@selector(add1:)];
-                [dispatcher addObserverOnce:[[SomeObserver alloc] init] forObject:[object class] withSelector:@selector(add1:)];
-                [dispatcher addObserverOnce:[[SomeObserver alloc] init] forObject:[object class] withSelector:@selector(add1:)];
+                it(@"removes observer when mapped once", ^{
+                    SomeObject *object = [[SomeObject alloc] init];
+                    SomeObserver *observer = [[SomeObserver alloc] init];
+                    [dispatcher addObserverOnce:observer forObject:[object class] withSelector:@selector(add1:)];
+                    [dispatcher dispatchObject:object];
 
-                [dispatcher dispatchObject:object];
-                [dispatcher dispatchObject:object];
-                [dispatcher dispatchObject:object];
+                    BOOL has = [dispatcher hasObserver:observer forObject:[object class] withSelector:@selector(add1:)];
 
-                [[observer.result should] equal:@"1"];
+                    [[theValue(has) should] beNo];
+                });
+
+                it(@"executes only once and removes mapping", ^{
+                    SomeObject *object = [[SomeObject alloc] init];
+                    SomeObserver *observer = [[SomeObserver alloc] init];
+                    [dispatcher addObserverOnce:observer forObject:[object class] withSelector:@selector(add1:)];
+
+                    // Some unused observers
+                    [dispatcher addObserverOnce:[[SomeObserver alloc] init] forObject:[object class] withSelector:@selector(add1:)];
+                    [dispatcher addObserverOnce:[[SomeObserver alloc] init] forObject:[object class] withSelector:@selector(add1:)];
+                    [dispatcher addObserverOnce:[[SomeObserver alloc] init] forObject:[object class] withSelector:@selector(add1:)];
+
+                    [dispatcher dispatchObject:object];
+                    [dispatcher dispatchObject:object];
+                    [dispatcher dispatchObject:object];
+
+                    [[observer.result should] equal:@"1"];
+                });
+
             });
 
             it(@"executes in right order with priority 0", ^{
